@@ -1,0 +1,57 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+
+  li {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2rem 5rem;
+    cursor: pointer;
+
+    &:hover {
+      background: lightgray;
+    }
+
+    &.pressed {
+      background: gray;
+    }
+
+    &.correct {
+      background: green;
+    }
+
+    &.wrong {
+      animation: wrong 1s ease-out;
+    }
+  }
+}
+
+@keyframes wrong {
+  from {
+    background: red;
+  } to {
+    background: white;
+  }
+}
